@@ -1,0 +1,36 @@
+<table class="tables">
+  <tr>
+    <td>
+      <h2>Detalles del Producto</h2>
+
+      <div *ngIf="product">
+        <table class="table">
+          <tr>
+            <td><h3>{{ product.name }}</h3></td>
+            <td><h3>{{ product.price | currency }}</h3></td>
+          </tr>
+          <tr>
+            <td>
+              <p>{{ product.description }}</p>
+            </td>
+            <td>
+              Presentaci&oacute;n: <b> {{ product.presentacion }}</b>
+            </td>
+          </tr>
+          <tr><td colspan="2"></td></tr>
+          <tr>
+            <td>
+              <a routerLink="/productList"> << Continuar Comprando</a>
+            </td>
+            <td>
+              <button type="button" (click)="addToCart(product)">Comprar</button>
+            </td>
+          </tr>
+        </table>
+       
+        
+      </div>
+    </td>
+  </tr>
+</table>
+

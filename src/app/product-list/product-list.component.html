@@ -1,0 +1,40 @@
+<h2>Lista de productos</h2>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+
+<div *ngFor="let product of products">
+  <table class="tables">
+    <tr>
+      <td style="height:15px;"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="width:80%">
+        <h3>
+          <a
+            [title]="product.name + ' - ' + product.peso + 'gr'"
+            [routerLink]="['/products', product.id]"
+          >
+            {{ product.name }} - {{ product.peso }} gr.
+          </a>
+        </h3>
+        <p *ngIf="product.description">
+          Descripci&oacute;n: {{ product.description }}
+        </p>
+      </td>
+      <td style="width:0%">
+        <button type="button" (click)="share()" style="display:none;">
+          Share
+        </button>
+        <app-product-alerts [product]="product" (notify)="onNotify()">
+        </app-product-alerts>
+      </td>
+      <td style="width:20%"></td>
+    </tr>
+  </table>
+  <hr />
+</div>
