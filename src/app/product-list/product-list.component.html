@@ -33,7 +33,9 @@ can be found in the LICENSE file at https://angular.io/license
         <app-product-alerts [product]="product" (notify)="onNotify()">
         </app-product-alerts>
       </td>
-      <td style="width:20%"></td>
+      <td style="width:20%">
+        <img src='{{ product.imagenURL }}'>
+      </td>
     </tr>
   </table>
   <hr />

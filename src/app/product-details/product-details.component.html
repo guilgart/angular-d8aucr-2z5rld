@@ -4,10 +4,24 @@
       <h2>Detalles del Producto</h2>
 
       <div *ngIf="product">
-        <table class="table">
+        <table class="tables">
           <tr>
-            <td><h3>{{ product.name }}</h3></td>
-            <td><h3>{{ product.price | currency }}</h3></td>
+            <td>
+              <table style="width:100%;">
+                <tr>
+                  <td style="width:70%; text-align:left;">
+                    <h3>{{ product.name }}</h3>
+                  </td>
+                  <td style="width:30%; text-align:left;">
+                    Precio:
+                    <h4>{{ product.price | currency }}</h4>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td style="text-align:center;">
+              <img src='{{ product.imagenURL }}'>
+            </td>
           </tr>
           <tr>
             <td>
