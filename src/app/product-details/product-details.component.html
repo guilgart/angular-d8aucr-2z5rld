@@ -28,7 +28,7 @@
               <p>{{ product.description }}</p>
             </td>
             <td>
-              Presentaci&oacute;n: <b> {{ product.presentacion }}</b>
+              Presentaci&oacute;n: <br> <b> {{ product.presentacion }}</b>
             </td>
           </tr>
           <tr><td colspan="2"></td></tr>
@@ -37,7 +37,7 @@
               <a routerLink="/productList"> << Continuar Comprando</a>
             </td>
             <td>
-              <button type="button" (click)="addToCart(product)">Comprar</button>
+              <a class="button" [routerLink]="['/productList']" (click)="addToCart(product)">Comprar</a>
             </td>
           </tr>
         </table>

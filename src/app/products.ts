@@ -29,7 +29,7 @@ export const products = [
   },
   {
     id: 3,
-    name: 'Pan 7 granos Integral',
+    name: 'Pan 7 Granos Integral',
     price: 7500,
     description: 'Para quienes desean aumentar la fibra en sus dietas, este delicioso pan tiene en sus ingredientes al menos 100gr de 7 diferentes granos de cereal, perfecto para quienes necesitan un dieta rica en fibra.',
     presentacion: 'tajado grande',
