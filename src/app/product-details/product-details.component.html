@@ -1,50 +1,62 @@
-<table class="tables">
-  <tr>
-    <td>
-      <h2>Detalles del Producto</h2>
-
-      <div *ngIf="product">
-        <table class="tables">
-          <tr>
-            <td>
-              <table style="width:100%;">
-                <tr>
-                  <td style="width:70%; text-align:left;">
-                    <h3>{{ product.name }}</h3>
-                  </td>
-                  <td style="width:30%; text-align:left;">
-                    Precio:
-                    <h4>{{ product.price | currency }}</h4>
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td style="text-align:center;">
-              <img src='{{ product.imagenURL }}'>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>{{ product.description }}</p>
-            </td>
-            <td>
-              Presentaci&oacute;n: <br> <b> {{ product.presentacion }}</b>
-            </td>
-          </tr>
-          <tr><td colspan="2"></td></tr>
-          <tr>
-            <td>
-              <a routerLink="/productList"> << Continuar Comprando</a>
-            </td>
-            <td>
-              <a class="button" [routerLink]="['/productList']" (click)="addToCart(product)">Comprar</a>
-            </td>
-          </tr>
-        </table>
-       
-        
+<br />
+<div *ngIf="product">
+  <div class="container-fluid">
+    <div class="card mb-3" style="">
+      <div class="card-header">
+        <div class="row g-0">
+          <div class="col-md-9">
+            <h2>Detalles del Producto</h2>
+          </div>
+          <div class="col-md-3 text-end">
+            <b>Precio: {{ product.price | currency }}</b>
+          </div>
+        </div>
       </div>
-    </td>
-  </tr>
-</table>
-
+      <div class="row g-0">
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text text-wrap">{{ product.description }}</p>
+            <p class="card-text">
+              <small class="text-muted">
+                <b>Presentaci&oacute;n</b>
+                <br />
+                {{ product.presentacion }}
+              </small>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <img
+            src="{{ product.imagenURL }}"
+            class="img-fluid rounded mx-auto d-block"
+            alt="{{ product.name }}"
+            style="height:120px; width:120px; margin-top: 10px;"
+          />
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="row g-0">
+          <div class="col-md-9 text-start">
+            <a
+              class="botonAtras text-decoration-none"
+              [routerLink]="['/productList']"
+              style="font-size:10pt;"
+            >
+              << Volver</a
+            >
+          </div>
+          <div class="col-md-3 text-center align-middle">
+            <a
+              class="boton text-decoration-none"
+              [routerLink]="['/productList']"
+              (click)="addToCart(product)"
+            >
+              Comprar</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -101,6 +101,41 @@ label {
   cursor: auto;
 }
 
+.boton, boton {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 10pt;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+}
+
+.boton:hover, boton:hover {
+  background-color: #003cff;
+  color: white;
+}
+
+.botonAtras, botonAtras {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 10pt;
+  cursor: pointer;
+  background-color: #c2cbd4;
+  color: rgb(59, 67, 139);
+  border: none;
+}
+
+.botonAtras:hover, botonAtras:hover {
+  background-color: #8f9cc9;
+  color: black;
+  }
+
+
 /* Fancy Button */
 
 .fancy-button {
