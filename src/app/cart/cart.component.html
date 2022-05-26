@@ -1,36 +1,89 @@
-<div  style="width:100%;">
-<h3>Carrito de Compras</h3>
-
-<p>
-  <a routerLink="/shipping">Shipping Prices</a>
-</p>
-
-<div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
-</div>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" >
-  <div>
-    <label for="name"> Nombre </label>
-    <input id="name" type="text" formControlName="name" />
-  </div>
-
-  <div>
-    <label for="address"> Direcci&oacute;n </label>
-    <input id="address" type="text" formControlName="address" />
-  </div>
-  <table style="width:100%;margin-left:auto;margin-right;auto;">
-    <tr>
-      <td>
-        <a routerLink="/productList" > Continua Comprando </a>
-      </td>
-      <td>
-        <button class="button" type="submit">Cargar Orden!</button>
-      </td>
-    </tr>
-  </table>
-  
-     
-  
-</form>
+<div class="container-fluid">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div
+      class="card border-secondary mb-3 text-center mx-auto"
+      style="max-width: 35rem;"
+    >
+      <div class="card-header"><b>Detalles de la orden</b></div>
+      <div class="card-body text-secondary">
+        <h5 class="card-title">Estas a punto de completar tu pedido!</h5>
+        <p class="card-text">
+          Por favor revisa los detalles de tu pedido antes de cargar tu orden,
+          queremos que los productos que deseas este en tu mesa lo antes
+          posible.
+        </p>
+        <hr />
+        <p style="font-size:10pt;">
+          <b>
+          Listado de productos en la orden:
+          </b>
+        </p>
+        
+        <div class="cart-item mx-auto" *ngFor="let item of items">
+          <span>{{ item.name }}</span>
+          <span>{{ item.price | currency }}</span>
+        </div>
+        <hr />
+        <div>
+          <div>
+            <p style="font-size:10pt;">
+              <b>
+                Confirma los datos donde quieres que sea entregado tu pedido:
+              </b>
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto">
+              <div class="input-group mb-3">
+                <span
+                  class="input-group-text"
+                  id="basic-addon1"
+                  style="font-size:10pt;"
+                  >Nombre:</span
+                >
+                <input
+                  id="name"
+                  type="text"
+                  formControlName="name"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="input-group mb-3">
+              <span
+                class="input-group-text"
+                id="basic-addon1"
+                style="font-size:10pt;"
+                >Direcci&oacute;n:</span
+              >
+              <input
+                id="address"
+                type="text"
+                formControlName="address"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="row g-0">
+          <div class="col w-50 text-start">
+            <a
+              class="botonAtras text-decoration-none"
+              [routerLink]="['/productList']"
+              style="font-size:10pt;"
+            >
+              << Seguir Comprando</a
+            >
+          </div>
+          <div class="col w-50 text-end">
+            <button class="button" type="submit">Terminar Orden!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
