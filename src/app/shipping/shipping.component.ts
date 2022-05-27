@@ -6,6 +6,7 @@ import { CartService } from '../cart.service';
   templateUrl: './shipping.component.html',
   styleUrls: ['./shipping.component.css']
 })
+
 export class ShippingComponent implements OnInit {
 
   shippingCosts = this.cartService.getShippingPrices();

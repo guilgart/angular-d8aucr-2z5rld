@@ -1,13 +1,49 @@
 <div class="container-fluid">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="card border-secondary mb-3  text-center mx-auto" style="max-width: 22rem;">
     <div class="card-header">Login</div>
     <div class="card-body text-secondary">
       <h5 class="card-title">Bienvenido a tu pastelería!</h5>
       <p class="card-text">Por favor ingresa tus credenciales de autenticacion para acceder a nuestros servicios.</p>
+      <div class="text-center">
+        <div class="mx-auto">
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="font-size:10pt;"
+              >Usuario:</span
+            >
+            <input
+              id="usuario"
+              type="text"
+              formControlName="usuario"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="input-group mb-3">
+          <span
+            class="input-group-text"
+            id="basic-addon1"
+            style="font-size:10pt;"
+            >Contraseña:</span
+          >
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            class="form-control"
+          />
+        </div>
+      </div>
     </div>
     <div class="card-footer">
-      <a routerLink="/productList" class="button fancy-button  text-decoration-none"><i class="material-icons">login</i>Login</a>
+      <button class="button fancy-button  text-decoration-none" type="submit"><i class="material-icons">login</i>Login</button>
     </div>
   </div>
+</form>
 </div>
 
